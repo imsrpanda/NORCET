@@ -6,13 +6,19 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "android:sync": "npx cap sync android",
+    "android:build": "npm run build && npx cap sync android && cd android && gradlew.bat assembleDebug && cd ..",
+    "android:open": "npx cap open android"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/cli": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "canvas-confetti": "^1.9.4",
     "lucide-react": "^1.16.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "canvas-confetti": "^1.9.4"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/canvas-confetti": "^1.9.0",
