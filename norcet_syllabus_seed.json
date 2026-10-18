@@ -1,0 +1,595 @@
+{
+  "metadata": {
+    "appName": "PocketNORCET",
+    "schemaVersion": "1.0.0",
+    "targetExams": [
+      "AIIMS NORCET Stage I & II",
+      "ESIC",
+      "RRB Nursing Superintendent",
+      "DSSSB",
+      "PGIMER",
+      "JIPMER"
+    ],
+    "totalSubjects": 8
+  },
+  "subjects": [
+    {
+      "id": "subj_fon_01",
+      "name": "Fundamentals of Nursing & Clinical Skills",
+      "iconName": "Stethoscope",
+      "weightagePercentage": 20,
+      "subtopics": [
+        {
+          "id": "sub_fon_iv_01",
+          "title": "Parenteral Therapy, IV Cannulation & Blood Transfusions",
+          "importanceTier": "High",
+          "phases": [
+            {
+              "id": "ph_fon_1_1",
+              "order": 1,
+              "title": "Phase 1: Principles & Equipment Specs",
+              "bulletPoints": [
+                {
+                  "id": "bp_fon_101",
+                  "label": "IV Cannula Gauge Color Coding, Flow Rates & Clinical Indications",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Standard Peripheral IV Catheter Specifications (ISO 10555)",
+                    "markdownContent": "### IV Cannula Color & Flow Rate Matrix\n* 14G (Orange): External Diameter 2.1 mm | Flow Rate ~240 mL/min. Used in massive trauma resuscitation, rapid blood transfusion, and major open surgery.\n* 16G (Grey): External Diameter 1.8 mm | Flow Rate ~180 mL/min. Used for rapid fluid replacement, trauma, and post-partum hemorrhage (PPH).\n* 18G (Green): External Diameter 1.3 mm | Flow Rate ~90 mL/min. Gold standard routine choice for packed RBC transfusions, contrast CT scans, and large-volume infusions.\n* 20G (Pink): External Diameter 1.1 mm | Flow Rate ~60 mL/min. Universal cannula for adult routine IV maintenance fluids and IV antibiotics.\n* 22G (Blue): External Diameter 0.9 mm | Flow Rate ~36 mL/min. Used in older adults, oncology patients with fragile veins, and pediatric patients.\n* 24G (Yellow): External Diameter 0.7 mm | Flow Rate ~20 mL/min. Standard infant, toddler, and neonate cannula.\n* 26G (Violet/Purple): External Diameter 0.6 mm | Flow Rate ~13 mL/min. Used strictly in premature and Extremely Low Birth Weight (ELBW) neonates.",
+                    "clinicalPearl": "Insert peripheral IV cannula at a strict 15° to 30° angle with the bevel facing UP. Once blood flashback is observed in the chamber, advance 2 mm, lower the angle nearly flush with the skin, and thread the plastic catheter while retracting the stylet.",
+                    "normalValues": [
+                      { "label": "Routine Peripheral IV Site Change", "value": "Every 72–96 hours" },
+                      { "label": "IV Administration Tubing Change (Continuous)", "value": "Every 72–96 hours" },
+                      { "label": "Parenteral Nutrition (TPN) / Lipid Tubing Change", "value": "Every 24 hours" },
+                      { "label": "Blood Administration Set Change", "value": "Every 4 hours (or after 1–2 units)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S1_Q12", "ESIC_2019_Q44", "RRB_2019_Q08"]
+                  }
+                },
+                {
+                  "id": "bp_fon_102",
+                  "label": "Osmolarity & Tonicity Mechanics of Intravenous Fluids",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Crystalloid Fluid Compartmental Shifts",
+                    "markdownContent": "### Classification by Plasma Tonicity (275–295 mOsm/L)\n* Isotonic Fluids:\n  * Examples: 0.9% NaCl (Normal Saline - 308 mOsm/L), Ringer's Lactate (Hartmann's Solution - 273 mOsm/L), 5% Dextrose in Water (D5W is isotonic in the bag at 252 mOsm/L, but becomes physiologically hypotonic once glucose is metabolized).\n  * Action: Remains strictly in the Extracellular Fluid (ECF) compartment; no net intracellular osmosis.\n* Hypotonic Fluids:\n  * Examples: 0.45% NaCl (Half Normal Saline - 154 mOsm/L), 0.225% NaCl, 2.5% Dextrose.\n  * Action: Shifts water from the intravascular space into the cells (swells cells). Used in cellular dehydration such as Hyperosmolar Hyperglycemic State (HHS).\n* Hypertonic Fluids:\n  * Examples: 3% NaCl (1026 mOsm/L), 5% Dextrose in 0.9% NS (D5NS), 5% Dextrose in RL (D5RL), 10% Dextrose (D10W), Mannitol 20%.\n  * Action: Pulls water out of the intracellular space into the intravascular space (shrinks cells). Used in severe symptomatic hyponatremia and cerebral edema.",
+                    "clinicalPearl": "ABSOLUTE CONTRAINDICATION: Never administer hypotonic fluids (0.45% NS or D5W) to patients with Increased Intracranial Pressure (ICP), traumatic brain injury, or burns—it worsens cerebral edema and third-spacing. Never give Ringer's Lactate in severe lactic acidosis or liver failure (impaired hepatic conversion of lactate to bicarbonate) or hyperkalemia (RL contains 4 mEq/L of Potassium).",
+                    "normalValues": [
+                      { "label": "Normal Serum Osmolality", "value": "275–295 mOsm/kg" },
+                      { "label": "0.9% Normal Saline Na+ & Cl- Content", "value": "154 mEq/L Na+ and 154 mEq/L Cl-" },
+                      { "label": "Ringer's Lactate Composition", "value": "Na: 130, Cl: 109, K: 4, Ca: 3, Lactate: 28 mEq/L" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2022_S2_Q31", "PGIMER_2021_Q19"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ph_fon_1_2",
+              "order": 2,
+              "title": "Phase 2: Protocol Execution",
+              "bulletPoints": [
+                {
+                  "id": "bp_fon_103",
+                  "label": "Safe Blood & Blood Product Transfusion Protocol",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Bedside Verification, Timing & Filter Specifications",
+                    "markdownContent": "### Critical Step-by-Step Nursing Protocol\n1. Pre-Transfusion Baseline: Obtain informed consent, verify physician order, ensure at least an 18G or 20G cannula is patent, and record baseline vital signs.\n2. Dual Verification: Two registered nurses must verify ABO/Rh group, unit serial number, expiration date, and patient identification wristband at the bedside.\n3. 30-Minute Rule: Transfusion must begin within 30 minutes of removing the unit from the blood bank refrigerator (1°C to 6°C).\n4. 4-Hour Rule: A single unit of Packed Red Blood Cells (PRBC) must be completely infused within 4 hours maximum to prevent bacterial sepsis.\n5. Initial Observation Window: Run the infusion slowly (2 mL/min or 10–15 gtt/min) for the first 15 minutes and remain at the patient's bedside, as fatal acute hemolytic and anaphylactic reactions manifest within the first 10–50 mL of blood.",
+                    "clinicalPearl": "ONLY 0.9% Normal Saline is compatible with blood products. Never co-administer Ringer's Lactate (calcium binds citrate anticoagulant and causes blood clotting in the line) or 5% Dextrose (causes osmotic hemolysis of RBCs).",
+                    "normalValues": [
+                      { "label": "PRBC Storage Temperature", "value": "1°C to 6°C (Shelf life: 35–42 days with CPDA-1)" },
+                      { "label": "Platelet Concentrate Storage", "value": "20°C to 24°C with continuous agitation (Shelf life: 5 days)" },
+                      { "label": "Fresh Frozen Plasma (FFP) Storage", "value": "-18°C to -30°C (Shelf life: 1 year; infuse within 30 mins of thawing)" },
+                      { "label": "Expected Hb Rise per 1 Unit PRBC", "value": "Increases Hemoglobin by ~1 g/dL and Hematocrit by ~3%" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S2_Q05", "AIIMS_NORCET_2021_Q88"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ph_fon_1_3",
+              "order": 3,
+              "title": "Phase 3: Complications & Interventions",
+              "bulletPoints": [
+                {
+                  "id": "bp_fon_104",
+                  "label": "Acute Hemolytic Transfusion Reaction & Local IV Complications",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Emergency Nursing Action Sequence",
+                    "markdownContent": "### 1. Acute Hemolytic Transfusion Reaction (ABO Incompatibility)\n* Clinical Presentation: Immediate onset (within 15 minutes) of fever, chills, acute lower back/flank pain (renal ischemia from free hemoglobin), chest tightness, hypotension, tachycardia, and hemoglobinuria (dark red/tea-colored urine).\n* Priority Nursing Action Sequence:\n  1. STOP the transfusion immediately.\n  2. Disconnect the blood tubing at the catheter hub (do not flush the existing line, as that pushes more incompatible blood in the tubing into the patient).\n  3. Attach a brand-new IV tubing primed with 0.9% Normal Saline directly to the cannula hub to maintain vascular patency.\n  4. Notify the treating physician and the Blood Bank immediately.\n  5. Monitor vital signs every 5–15 minutes and send the blood bag, attached tubing, and fresh patient blood + urine samples back to the blood bank.\n\n### 2. Local IV Therapy Complications\n* Infiltration (Non-vesicant fluid leak): Cool skin, pallor, edema around site, sluggish flow. Action: Stop infusion, remove cannula, elevate extremity, apply cold/warm compress per hospital protocol.\n* Extravasation (Vesicant drug leak - e.g., Dopamine, Chemotherapy): Severe burning pain, blistering, tissue necrosis. Action: Stop infusion immediately, leave cannula in place to aspirate residual drug and inject specific antidote (e.g., Phentolamine for norepinephrine/dopamine extravasation), then remove cannula.\n* Air Embolism: Sudden dyspnea, chest pain, hypotension, cyanosis, 'mill-wheel' cardiac murmur. Action: Clamp tubing and immediately place patient in Durant's Maneuver (Left Lateral Trendelenburg position) to trap the air bubble in the apex of the right ventricle away from the pulmonary artery outflow tract.",
+                    "clinicalPearl": "In NORCET Stage-II scenario questions: If a patient develops flank pain or chills during transfusion, 'Stop the transfusion' ALWAYS beats 'Notify the physician' or 'Check vital signs' as the first priority nursing action.",
+                    "normalValues": [
+                      { "label": "Citrate Toxicity (Massive Transfusion)", "value": "Causes Hypocalcemia (Chvostek's & Trousseau's signs, prolonged QT)" },
+                      { "label": "TACO vs TRALI differentiation", "value": "TACO has elevated CVP/JVD and responds to Furosemide; TRALI is non-cardiogenic pulmonary edema" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2024_S2_Q14", "ESIC_2024_Q62"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ph_fon_1_4",
+              "order": 4,
+              "title": "Phase 4: High-Yield Calculations & PYQ Traps",
+              "bulletPoints": [
+                {
+                  "id": "bp_fon_105",
+                  "label": "IV Flow Rate, Drop Factor & Drug Dosage Arithmetic",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Master Formulas for Clinical Calculations",
+                    "markdownContent": "### 1. IV Gravity Drip Rate Formula\n* Formula: Flow Rate (gtt/min) = [Total Volume (mL) × Drop Factor (gtt/mL)] / Time in Minutes\n* Standard Macro-drip set: 15 gtt/mL (or 20 gtt/mL)\n* Blood Transfusion set: 10 gtt/mL\n* Micro-drip / Pediatric burette set: 60 gtt/mL (Note: With a micro-drip set, gtt/min is numerically equal to mL/hr).\n\n### 2. Medication Titration Formula\n* Formula: Dose to Administer = [Desired Dose (D) / Dose on Hand (H)] × Vehicle Volume (V)\n\n### 3. Weight-Based Infusion (mcg/kg/min to mL/hr)\n* Formula: Infusion Rate (mL/hr) = [Dose (mcg/kg/min) × Weight (kg) × 60] / Concentration (mcg/mL)",
+                    "clinicalPearl": "Always round final drop rates (gtt/min) to the nearest WHOLE number because a fraction of a drop cannot be physically delivered.",
+                    "normalValues": [
+                      { "label": "1 Teaspoon (tsp)", "value": "5 mL" },
+                      { "label": "1 Tablespoon (tbsp)", "value": "15 mL (3 tsp)" },
+                      { "label": "1 Ounce (oz)", "value": "30 mL" },
+                      { "label": "1 Grain (gr)", "value": "60–65 mg" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S1_Q55", "DSSSB_2022_Q19"]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sub_fon_tubes_02",
+          "title": "Nasogastric Intubation, Catheterization & Acid-Base Balance",
+          "importanceTier": "High",
+          "phases": [
+            {
+              "id": "ph_fon_2_1",
+              "order": 1,
+              "title": "Phase 1: Tube Insertion & Verification",
+              "bulletPoints": [
+                {
+                  "id": "bp_fon_201",
+                  "label": "Ryle's Tube (NG Tube) Measurement, Insertion & Gold-Standard Verification",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "NEX Measurement & Placement Confirmation",
+                    "markdownContent": "### 1. Length Measurement (NEX Method)\nMeasure from the Tip of the Nose -> Earlobe -> Xiphoid Process of the sternum (approx. 50–60 cm in adults).\n\n### 2. Insertion Positioning\n* Place conscious patient in High Fowler's Position (80°–90°).\n* Lubricate the tip with water-soluble lubricant (K-Y Jelly). Never use oil-based lubricant (Vaseline) due to the risk of fatal lipid pneumonia if aspirated.\n* Once the tube reaches the nasopharynx, ask the patient to flex the neck forward (chin to chest) and take sips of water to close the glottis and ease passage into the esophagus.\n\n### 3. Placement Confirmation Hierarchy\n* Gold Standard (Most Accurate): Chest/Abdominal X-ray before initiating first feeding.\n* Most Reliable Bedside Test: Aspirating gastric contents and checking pH using litmus strip (Gastric pH is acidic: 1.5 to 4.0; pH >= 6.0 indicates respiratory tract or intestinal placement).\n* Outdated/Unreliable Test: Auscultating an air bolus ('whoosh test') over the epigastrium is no longer considered reliable in modern nursing standards.",
+                    "clinicalPearl": "Prior to administering intermittent enteral bolus feeds, check Gastric Residual Volume (GRV). Withhold feeding if GRV exceeds 250–500 mL (or >50% of previous feed volume) and return the aspirated contents to the stomach to prevent hypokalemic metabolic alkalosis.",
+                    "normalValues": [
+                      { "label": "Adult NG Tube Size", "value": "14 Fr to 18 Fr" },
+                      { "label": "Pediatric/Infant NG Tube Size", "value": "5 Fr to 10 Fr" },
+                      { "label": "Gastric Aspirate pH", "value": "1.5 to 4.0 (up to 5.5 if on PPIs)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2022_S1_Q18", "JIPMER_2022_Q33"]
+                  }
+                },
+                {
+                  "id": "bp_fon_202",
+                  "label": "Arterial Blood Gas (ABG) Sampling, Allen's Test & ROME Interpretation",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Modified Allen's Test & Acid-Base Matrix",
+                    "markdownContent": "### 1. Pre-ABG Modified Allen's Test\n* Purpose: Assesses collateral circulation of the hand via the deep palmar arch and ulnar artery before puncturing the radial artery.\n* Technique: Elevate hand, ask patient to clench fist, occlude both radial and ulnar arteries, open hand (palm appears blanched/pale), then release pressure over the ulnar artery only.\n* Positive (Normal) Result: Hand flushes pink within 6 to 7 seconds (<15 sec), confirming adequate ulnar collateral flow (safe to puncture radial artery).\n\n### 2. ROME Mnemonic for ABG Interpretation\n* Respiratory Opposite:\n  * Low pH (<7.35) + High PaCO2 (>45 mmHg) = Respiratory Acidosis\n  * High pH (>7.45) + Low PaCO2 (<35 mmHg) = Respiratory Alkalosis\n* Metabolic Equal:\n  * Low pH (<7.35) + Low HCO3- (<22 mEq/L) = Metabolic Acidosis\n  * High pH (>7.45) + High HCO3- (>26 mEq/L) = Metabolic Alkalosis",
+                    "clinicalPearl": "Common ABG clinical causes: Prolonged NG suctioning or severe vomiting loses HCl -> Metabolic Alkalosis. Severe diarrhea or Renal Failure loses bicarbonate -> Metabolic Acidosis. COPD / Opioid overdose -> Respiratory Acidosis. Panic attack / Hyperventilation / Salicylate early toxicity -> Respiratory Alkalosis.",
+                    "normalValues": [
+                      { "label": "Arterial Blood pH", "value": "7.35 – 7.45" },
+                      { "label": "PaCO2 (Partial Pressure of CO2)", "value": "35 – 45 mmHg" },
+                      { "label": "HCO3- (Serum Bicarbonate)", "value": "22 – 26 mEq/L" },
+                      { "label": "PaO2 (Partial Pressure of O2)", "value": "80 – 100 mmHg" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S2_Q41", "AIIMS_NORCET_2020_Q09"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_msn_02",
+      "name": "Medical-Surgical Nursing (Adult Health)",
+      "iconName": "HeartPulse",
+      "weightagePercentage": 25,
+      "subtopics": [
+        {
+          "id": "sub_msn_cardio_01",
+          "title": "Cardiovascular Disorders: ACS, Heart Failure & ECG",
+          "importanceTier": "High",
+          "phases": [
+            {
+              "id": "ph_msn_1_1",
+              "order": 1,
+              "title": "Phase 1: Pathophysiology & Diagnostics",
+              "bulletPoints": [
+                {
+                  "id": "bp_msn_101",
+                  "label": "Cardiac Biomarker Kinetics & 12-Lead ECG Localization of MI",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Troponin vs. CK-MB Kinetics & Lead Anatomy",
+                    "markdownContent": "### 1. Serum Biomarker Kinetics in Acute MI\n* Cardiac Troponin I & T (Gold Standard): Rises within 3–4 hours, peaks at 12–24 hours, remains elevated for 10–14 days. Highest sensitivity and myocardial specificity.\n* CK-MB (Creatine Kinase-MB): Rises within 4–6 hours, peaks at 18–24 hours, returns to normal in 48–72 hours. Best marker to detect re-infarction on Day 3 or 4.\n* Myoglobin: Earliest marker to rise (1–2 hours), normalizes in 24 hours. Lacks cardiac specificity.\n\n### 2. 12-Lead ECG Localization & Culprit Coronary Artery\n* V1, V2: Septal Wall MI -> Left Anterior Descending (LAD)\n* V3, V4: Anterior Wall MI -> Left Anterior Descending (LAD - 'Widow Maker')\n* Leads I, aVL, V5, V6: Lateral Wall MI -> Left Circumflex Artery (LCx)\n* Leads II, III, aVF: Inferior Wall MI -> Right Coronary Artery (RCA)",
+                    "clinicalPearl": "In Inferior Wall MI (Leads II, III, aVF), always obtain Right-Sided ECG leads (especially V4R) to rule out Right Ventricular MI. If RV MI is present, Nitroglycerin and Morphine are CONTRAINDICATED because the right ventricle is preload-dependent; administer IV Normal Saline bolus instead.",
+                    "normalValues": [
+                      { "label": "Cardiac Troponin I", "value": "< 0.04 ng/mL" },
+                      { "label": "CK-MB Index", "value": "0 – 3 ng/mL (<5% of total CK)" },
+                      { "label": "Door-to-Balloon Time (PCI)", "value": "< 90 minutes" },
+                      { "label": "Door-to-Needle Time (Fibrinolysis)", "value": "< 30 minutes" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S2_Q22", "PGIMER_2022_Q04"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ph_msn_1_2",
+              "order": 2,
+              "title": "Phase 2: Acute Clinical Management",
+              "bulletPoints": [
+                {
+                  "id": "bp_msn_102",
+                  "label": "Defibrillation vs. Synchronized Cardioversion & Electrolyte ECG Changes",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Shockable Rhythms & Potassium/Calcium ECG Signatures",
+                    "markdownContent": "### 1. ACLS Electrical Therapy\n* Defibrillation (Asynchronous Shock):\n  * Indications: Pulseless Ventricular Tachycardia (pVT) and Ventricular Fibrillation (VF).\n  * Energy: Biphasic 120–200 Joules | Monophasic 360 Joules.\n  * Non-shockable arrests: Asystole and Pulseless Electrical Activity (PEA) — treat with high-quality CPR and Epinephrine 1 mg IV (1:10,000) every 3–5 minutes.\n* Synchronized Cardioversion:\n  * Indications: Unstable SVT, Unstable Atrial Fibrillation/Flutter, and VT with a pulse.\n  * Mechanism: Delivers shock synchronized onto the R-wave to avoid hitting the relative refractory period (T-wave), which would precipitate VF (R-on-T phenomenon).\n\n### 2. Electrolyte Imbalance ECG Signatures\n* Hyperkalemia (K+ > 5.0 mEq/L): Tall, peaked T-waves (earliest sign) -> flattened P-wave -> prolonged PR interval -> widened QRS -> Sine-wave pattern.\n* Hypokalemia (K+ < 3.5 mEq/L): Flattened/inverted T-waves, prominent U-waves, ST depression.\n* Hypocalcemia: Prolonged QT interval and prolonged ST segment.\n* Hypercalcemia: Shortened QT interval and shortened ST segment.",
+                    "clinicalPearl": "Emergency management of severe Hyperkalemia with ECG changes: 1st action is IV 10% Calcium Gluconate (stabilizes cardiac cell membrane within 1–3 mins; does NOT lower serum K+). 2nd action is Regular Insulin (10 units IV) + 50 mL of 50% Dextrose to shift K+ into cells.",
+                    "normalValues": [
+                      { "label": "Normal PR Interval", "value": "0.12 – 0.20 seconds (3–5 small squares)" },
+                      { "label": "Normal QRS Duration", "value": "0.06 – 0.10 seconds (<3 small squares)" },
+                      { "label": "Normal Serum Potassium (K+)", "value": "3.5 – 5.0 mEq/L" },
+                      { "label": "Therapeutic Digoxin Level", "value": "0.5 – 2.0 ng/mL (Toxicity > 2.0 ng/mL)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2024_S1_Q03", "AIIMS_NORCET_2022_S2_Q11", "ESIC_2024_Q15"]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sub_msn_neuro_02",
+          "title": "Neurological & Burn Emergencies: GCS, ICP & Parkland Formula",
+          "importanceTier": "High",
+          "phases": [
+            {
+              "id": "ph_msn_2_1",
+              "order": 1,
+              "title": "Phase 1: Assessment & Critical Care",
+              "bulletPoints": [
+                {
+                  "id": "bp_msn_201",
+                  "label": "Glasgow Coma Scale (GCS), Cushing's Triad & Increased ICP Care",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "GCS Scoring Breakdown & Intracranial Pressure Dynamics",
+                    "markdownContent": "### 1. Glasgow Coma Scale (Range: 3 to 15)\n* Eye Opening (E1–E4): Spontaneous (4), To Speech (3), To Pressure/Pain (2), None (1).\n* Verbal Response (V1–V5): Oriented (5), Confused (4), Inappropriate Words (3), Incomprehensible Sounds (2), None (1). (Use VT if intubated).\n* Motor Response (M1–M6): Obeys Commands (6), Localizes Pain (5), Normal Flexion/Withdrawal (4), Abnormal Flexion / Decorticate (3), Extension / Decerebrate (2), None (1).\n\n### 2. Increased Intracranial Pressure (ICP) & Cushing's Triad\n* Earliest Sign of Increased ICP: Change in Level of Consciousness (LOC) (restlessness, confusion, lethargy).\n* Cushing's Triad (Late sign indicating impending brainstem herniation):\n  1. Systolic Hypertension with Widened Pulse Pressure\n  2. Bradycardia (reflex via baroreceptors)\n  3. Irregular Respirations (Cheyne-Stokes / Biot's breathing)\n* Nursing Care for Raised ICP: Elevate head of bed to 30° with head in neutral midline alignment (promotes jugular venous drainage), prevent Valsalva maneuver/coughing, suction <10 seconds after hyperoxygenating with 100% O2, and administer osmotic diuretic Mannitol 20% via a filter needle.",
+                    "clinicalPearl": "GCS <= 8 ('Less than 8, Intubate!'): Indicates coma and inability to protect the airway; immediate endotracheal intubation is the priority.",
+                    "normalValues": [
+                      { "label": "Normal Intracranial Pressure (ICP)", "value": "5 – 15 mmHg" },
+                      { "label": "Cerebral Perfusion Pressure (CPP)", "value": "CPP = MAP - ICP (Normal: 60–100 mmHg; must keep >= 60 mmHg)" },
+                      { "label": "Normal CSF Pressure (Lateral Recumbent)", "value": "70 – 180 mm H2O" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S1_Q09", "RRB_2019_Q52"]
+                  }
+                },
+                {
+                  "id": "bp_msn_202",
+                  "label": "Wallace Rule of Nines & Parkland Burn Resuscitation Formula",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Total Body Surface Area (TBSA) & 24-Hour Fluid Protocol",
+                    "markdownContent": "### 1. Adult Rule of Nines (TBSA %)\n* Head & Neck: 9%\n* Each Upper Extremity (Arm): 9% (4.5% anterior + 4.5% posterior) -> Total 18%\n* Anterior Trunk (Chest + Abdomen): 18%\n* Posterior Trunk (Back + Buttocks): 18%\n* Each Lower Extremity (Leg): 18% (9% anterior + 9% posterior) -> Total 36%\n* Perineum / Genitalia: 1%\n\n### 2. Parkland Formula (First 24 Hours Post-Burn)\n* Formula: Total Fluid (mL) = 4 mL × Body Weight (kg) × %TBSA (2nd & 3rd degree burns only)\n* Fluid of Choice: Ringer's Lactate (RL)\n* Infusion Schedule:\n  * First 50% of volume: Infuse over the first 8 hours (calculated from the exact time of burn injury, NOT the time of hospital arrival).\n  * Remaining 50% of volume: Infuse over the next 16 hours.",
+                    "clinicalPearl": "The single most reliable clinical indicator of adequate fluid resuscitation in a burn patient is Hourly Urine Output: 0.5 mL/kg/hr (30–50 mL/hr) in adults, and 1.0 mL/kg/hr in children <30 kg. In electrical burns with myoglobinuria, maintain urine output at 75–100 mL/hr.",
+                    "normalValues": [
+                      { "label": "Electrolyte Shift in First 24–48 hrs of Burn", "value": "Hyperkalemia (cell lysis) & Hyponatremia (capillary leak)" },
+                      { "label": "Topical Agent Crossing Eschar", "value": "Mafenide Acetate (Sulfamylon) - side effect: Metabolic Acidosis" },
+                      { "label": "Silver Sulfadiazine (1%) Side Effect", "value": "Transient Leukopenia at 48–72 hours" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S2_Q19", "AIIMS_NORCET_2021_Q64"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_obg_03",
+      "name": "Obstetric & Gynecological Nursing (Midwifery)",
+      "iconName": "Baby",
+      "weightagePercentage": 15,
+      "subtopics": [
+        {
+          "id": "sub_obg_labor_01",
+          "title": "Antenatal Assessment, Stages of Labor & High-Risk Obstetrics",
+          "importanceTier": "High",
+          "phases": [
+            {
+              "id": "ph_obg_1_1",
+              "order": 1,
+              "title": "Phase 1: Antenatal Assessment & Calculations",
+              "bulletPoints": [
+                {
+                  "id": "bp_obg_101",
+                  "label": "Naegele's Rule, Leopold's Maneuvers & Physiological Signs of Pregnancy",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "EDD Calculation & Named Clinical Signs of Pregnancy",
+                    "markdownContent": "### 1. Naegele's Formula for Expected Date of Delivery (EDD)\n* Formula: EDD = First Day of Last Menstrual Period (LMP) + 9 Months + 7 Days\n*(Or subtract 3 months and add 7 days + 1 year. Assumes a regular 28-day cycle).* \n\n### 2. Named Probable Signs of Pregnancy\n* Chadwick's (Jacquemier's) Sign (6–8 weeks): Bluish-violet discoloration of the cervix and vaginal mucosa due to venous congestion.\n* Goodell's Sign (6 weeks): Softening of the cervix (feels like lips instead of the tip of the nose).\n* Hegar's Sign (6–8 weeks): Softening and compressibility of the lower uterine segment (isthmus).\n* Osiander's Sign (8 weeks): Increased pulsation felt through the lateral vaginal fornices.\n* Palmer's Sign (4–8 weeks): Regular, rhythmic uterine contractions felt during bimanual examination.\n\n### 3. Leopold's Four Maneuvers (Performed with empty bladder, supine with slight left tilt)\n1. First Maneuver (Fundal Grip): Identifies which fetal pole (cephalic vs. breech) occupies the uterine fundus.\n2. Second Maneuver (Umbilical/Lateral Grip): Identifies the fetal back (smooth, hard, convex surface — used for FHR auscultation) vs. fetal limbs.\n3. Third Maneuver (Pawlik's Grip): Determines the presenting part above the pelvic inlet and whether engagement has occurred.\n4. Fourth Maneuver (Pelvic Grip): Examiner faces the mother's feet; determines the degree of flexion (attitude) and cephalic prominence.",
+                    "clinicalPearl": "Positive (Confirmatory) signs of pregnancy are ONLY three: 1. Visualization of fetus on Ultrasound (TVS detects gestational sac at 4.5–5 weeks), 2. Fetal Heart Tones heard via Doppler (10–12 weeks) or Fetoscope (18–20 weeks), and 3. Fetal movements palpated by the examiner.",
+                    "normalValues": [
+                      { "label": "Fundal Height at Symphysis Pubis", "value": "12 Weeks Gestation" },
+                      { "label": "Fundal Height at Umbilicus", "value": "20–22 Weeks Gestation" },
+                      { "label": "Fundal Height at Xiphisternum", "value": "36 Weeks Gestation (Lightening drops it to 32-wk level at 38–40 wks)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S1_Q29", "DSSSB_2022_Q71"]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "ph_obg_1_2",
+              "order": 2,
+              "title": "Phase 2: Intrapartum & Obstetric Emergencies",
+              "bulletPoints": [
+                {
+                  "id": "bp_obg_102",
+                  "label": "Preeclampsia, Magnesium Sulfate (MgSO4) Toxicity & Postpartum Hemorrhage (PPH)",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Pritchard/Zuspan Regimen & PPH Management",
+                    "markdownContent": "### 1. Magnesium Sulfate (MgSO4) Protocol in Severe Preeclampsia/Eclampsia\n* Mechanism: CNS depressant and vasodilator; Drug of Choice to prevent and control eclamptic seizures.\n* Pritchard Regimen (IM + IV):\n  * Loading Dose: 4 g IV (20% solution over 5–10 mins) + 10 g Deep IM (5 g of 50% solution in each buttock using Z-track with 1 mL of 2% Lignocaine).\n  * Maintenance Dose: 5 g Deep IM every 4 hours in alternate buttocks.\n* Zuspan Regimen (Continuous IV): 4 g IV loading dose followed by 1–2 g/hr continuous IV infusion.\n* Sequential Signs of MgSO4 Toxicity:\n  1. Loss of Deep Tendon Reflexes (Patellar/Knee-jerk reflex disappears at >7 mEq/L) — Earliest clinical sign!\n  2. Respiratory Depression (<12 breaths/min at >10 mEq/L)\n  3. Cardiac Arrest (>12–15 mEq/L)\n* Antidote: 10 mL of 10% Calcium Gluconate (1 g) given slow IV over 10 minutes.\n\n### 2. Postpartum Hemorrhage (PPH)\n* Definition: Blood loss >500 mL after vaginal delivery, >1000 mL after Cesarean section, or any blood loss causing hemodynamic instability (Shock Index HR/SBP >= 0.9).\n* Causes (4 T's): Tone (Uterine Atony — 80% most common cause), Trauma (cervical/vaginal lacerations), Tissue (retained placenta), Thrombin (coagulopathy).\n* First Nursing Action in Boggy Uterus: Perform immediate Bimanual Fundal Massage while running Oxytocin (20–40 IU in 1 L RL/NS) and emptying the urinary bladder.",
+                    "clinicalPearl": "Before administering any maintenance dose of MgSO4, verify 3 mandatory parameters: 1. Patellar reflex is present, 2. Respiratory rate >= 16/min (or >= 12/min per WHO), and 3. Urine output >= 30 mL/hr (because MgSO4 is excreted 100% by the kidneys). Also remember: Methylergometrine (Methergine) is strictly CONTRAINDICATED in hypertension/preeclampsia; Carboprost (PGF2-alpha) is CONTRAINDICATED in bronchial asthma.",
+                    "normalValues": [
+                      { "label": "Therapeutic Serum Magnesium Level", "value": "4 – 7 mEq/L (4.8 – 8.4 mg/dL)" },
+                      { "label": "Active Management of 3rd Stage of Labor (AMTSL) Drug", "value": "Oxytocin 10 IU IM within 1 minute of baby's birth" },
+                      { "label": "Lochia Rubra -> Serosa -> Alba Sequence", "value": "Rubra (Days 1–4), Serosa (Days 5–9), Alba (Days 10–15+)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2024_S2_Q08", "AIIMS_NORCET_2022_S1_Q42", "ESIC_2019_Q81"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_peds_04",
+      "name": "Child Health Nursing (Pediatrics & Neonatology)",
+      "iconName": "ToyBrick",
+      "weightagePercentage": 12,
+      "subtopics": [
+        {
+          "id": "sub_peds_neo_01",
+          "title": "Growth Milestones, Neonatal Resuscitation & Congenital Anomalies",
+          "importanceTier": "High",
+          "phases": [
+            {
+              "id": "ph_peds_1_1",
+              "order": 1,
+              "title": "Phase 1: Growth, Milestones & Neonatal Care",
+              "bulletPoints": [
+                {
+                  "id": "bp_peds_101",
+                  "label": "Anthropometric Growth Rules, Developmental Milestones & APGAR Score",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Weight/Height Multipliers & Developmental Timeline",
+                    "markdownContent": "### 1. Anthropometric Growth Multipliers\n* Birth Weight (2.5–3.5 kg):\n  * Doubles by 5 months of age\n  * Triples by 1 year of age\n  * Quadruples (4x) by 2 years of age\n* Birth Length (50 cm): Increases to 75 cm at 1 year, and doubles (100 cm) at 4 years.\n* Fontanelle Closure:\n  * Posterior Fontanelle (Lambda - triangular): Closes at 6 to 8 weeks (1.5–2 months).\n  * Anterior Fontanelle (Bregma - diamond-shaped): Closes at 12 to 18 months.\n\n### 2. High-Yield Developmental Milestones\n* 2 Months: Social smile, posterior fontanelle closes.\n* 3 Months: Head control (neck holding), coos.\n* 5–6 Months: Rolls over (prone to supine first, then supine to prone), sits with support, stranger anxiety begins, first tooth erupts (lower central incisor).\n* 8 Months: Sits without support.\n* 9 Months: Crawls, immature pincer grasp, says 'Mama/Dada' non-specifically.\n* 12 Months (1 Year): Stands independently, walks with one hand held, mature pincer grasp, 2–3 words with meaning.",
+                    "clinicalPearl": "Red Flags in Development: No social smile by 3 months, no head control by 4 months, inability to sit without support by 9 months, or persistence of the Moro/Tonic Neck reflex beyond 6 months (suggests Cerebral Palsy).",
+                    "normalValues": [
+                      { "label": "APGAR Score Components (0–2 pts each)", "value": "Appearance, Pulse, Grimace, Activity, Respiration (Assessed at 1 & 5 mins)" },
+                      { "label": "Severe Birth Asphyxia APGAR", "value": "Score 0 – 3 (4–6: Moderate depression; 7–10: Normal)" },
+                      { "label": "Neonatal Chest Compression : Ventilation Ratio", "value": "3 : 1 (90 compressions + 30 breaths = 120 events/min)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S1_Q63", "RRB_2019_Q34"]
+                  }
+                },
+                {
+                  "id": "bp_peds_102",
+                  "label": "Congenital Heart Disease (Tetralogy of Fallot) & Tracheoesophageal Fistula (TEF)",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Tet Spells & 3 C's of TEF",
+                    "markdownContent": "### 1. Tetralogy of Fallot (TOF) — Most Common Cyanotic CHD after Infancy\n* Four Components (PROVe Mnemonic):\n  1. Pulmonary Stenosis (determines clinical severity)\n  2. Right Ventricular Hypertrophy (causes 'Boot-shaped heart' / Coeur en sabot on Chest X-ray)\n  3. Overriding of Aorta\n  4. Ventricular Septal Defect (VSD)\n* Hypercyanotic 'Tet Spell' (Blue Spell) Management:\n  * Immediate First Action: Place infant in Knee-Chest (Genupectoral) Position (or squatting in older children). This increases Systemic Vascular Resistance (SVR), reducing the right-to-left shunt across the VSD and forcing more blood into the pulmonary artery.\n  * 2nd Action: Administer 100% O2, calm the child, and administer Morphine Sulfate (0.1–0.2 mg/kg) to relax infundibular spasm.\n\n### 2. Tracheoesophageal Fistula (TEF) & Esophageal Atresia\n* Most Common Type (Type C — 85%): Upper esophageal segment ends in a blind pouch, and the lower segment connects via a fistula to the trachea.\n* Classic Triad (3 C's in Newborn): Coughing, Choking, and Cyanosis immediately upon first feeding, accompanied by excessive frothy drooling of saliva and history of maternal polyhydramnios.",
+                    "clinicalPearl": "If TEF is suspected in a newborn, IMMEDIATELY keep the infant NPO (Nothing by Mouth), elevate the head of the bed to 30°–45° to prevent reflux of gastric acid through the distal fistula into the lungs, and apply continuous low suction to the upper blind pouch.",
+                    "normalValues": [
+                      { "label": "Drug to Close Patent Ductus Arteriosus (PDA)", "value": "Indomethacin or Ibuprofen (Prostaglandin Synthesis Inhibitors)" },
+                      { "label": "Drug to Keep PDA Open in Duct-Dependent CHD", "value": "Alprostadil (Prostaglandin E1)" },
+                      { "label": "Classic Pulse Sign in Coarctation of Aorta", "value": "Bounding upper extremity pulses + weak/absent femoral pulses" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2024_S2_Q27", "AIIMS_NORCET_2021_Q15"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_psych_05",
+      "name": "Psychiatric & Mental Health Nursing",
+      "iconName": "Brain",
+      "weightagePercentage": 10,
+      "subtopics": [
+        {
+          "id": "sub_psych_pharm_01",
+          "title": "Psychopharmacology, Schizophrenia, Mood Disorders & ECT",
+          "importanceTier": "High",
+          "phases": [
+            {
+              "id": "ph_psych_1_1",
+              "order": 1,
+              "title": "Phase 1: Psychopathology & Therapeutics",
+              "bulletPoints": [
+                {
+                  "id": "bp_psych_101",
+                  "label": "Lithium Toxicity, Antipsychotic Extrapyramidal Symptoms (EPS) & Clozapine",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Mood Stabilizers & Antipsychotic Safety Monitoring",
+                    "markdownContent": "### 1. Lithium Carbonate (Gold Standard for Acute Mania & Bipolar Prophylaxis)\n* Narrow Therapeutic Index: 0.6 to 1.2 mEq/L (Acute Mania: 0.8–1.2 mEq/L; Maintenance: 0.6–1.0 mEq/L). Blood sample must be drawn 12 hours after the last evening dose.\n* Toxicity Thresholds (>1.5 mEq/L):\n  * Mild Toxicity (1.5–2.0 mEq/L): Coarse hand tremors (Note: fine tremor is a normal side effect), persistent nausea, vomiting, diarrhea, polyuria, lethargy.\n  * Moderate-to-Severe (>2.0–2.5 mEq/L): Ataxia, slurred speech, tinnitus, blurred vision, seizures, coma, renal failure (treat with Hemodialysis).\n* Sodium-Lithium Inverse Relationship: Hyponatremia (from dehydration, sweating, diuretics, or low-salt diet) causes the proximal renal tubules to reabsorb Lithium, precipitating acute Lithium toxicity.\n\n### 2. Extrapyramidal Side Effects (EPS) of Typical Antipsychotics (Haloperidol, Fluphenazine)\n* Acute Dystonia (Hours to Day 5): Sudden painful muscle spasms (Oculogyric crisis, torticollis, opisthotonus). Treatment: Parenteral Benztropine (Cogentin) or Promethazine/Diphenhydramine.\n* Akathisia (Days 5–60 — Most Common EPS): Subjective motor restlessness, inability to sit still, pacing. Treatment: Propranolol (Beta-blocker) or Benzodiazepines.\n* Pseudoparkinsonism (Weeks): Pill-rolling tremor, cogwheel rigidity, shuffling gait, mask-like facies. Treatment: Oral Trihexyphenidyl (Pacitane) or Benztropine.\n* Tardive Dyskinesia (Months to Years — Irreversible): Involuntary lip-smacking, tongue protrusion, choreiform movements.\n* Neuroleptic Malignant Syndrome (NMS — Fatal Emergency): 'Lead-pipe' muscle rigidity, hyperpyrexia (>104°F), autonomic instability, elevated CPK. Drug of Choice: Dantrolene Sodium or Bromocriptine.",
+                    "clinicalPearl": "Clozapine (Atypical Antipsychotic for Treatment-Resistant Schizophrenia) carries a 1–2% risk of fatal Agranulocytosis. Mandatory weekly WBC and Absolute Neutrophil Count (ANC) monitoring is required. IMMEDIATELY stop Clozapine if WBC drops < 3,000/mm3 or ANC < 1,500/mm3, or if the patient develops a sore throat or fever.",
+                    "normalValues": [
+                      { "label": "Therapeutic Serum Lithium Level", "value": "0.6 – 1.2 mEq/L" },
+                      { "label": "ECT Voltage & Duration", "value": "70 – 120 Volts for 0.6 – 1.5 seconds (Therapeutic seizure: 30–60 sec)" },
+                      { "label": "Pre-ECT Medication Sequence", "value": "Atropine (dry secretions) -> Thiopental/Propofol (anesthetic) -> Succinylcholine (muscle relaxant)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S2_Q50", "AIIMS_NORCET_2022_S1_Q77", "NIMHANS_2021_Q12"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_chn_06",
+      "name": "Community Health Nursing & Epidemiology",
+      "iconName": "ShieldPlus",
+      "weightagePercentage": 10,
+      "subtopics": [
+        {
+          "id": "sub_chn_bmw_01",
+          "title": "Biomedical Waste (BMW) Rules, Immunization & Cold Chain",
+          "importanceTier": "High",
+          "phases": [
+            {
+              "id": "ph_chn_1_1",
+              "order": 1,
+              "title": "Phase 1: National Guidelines & Protocols",
+              "bulletPoints": [
+                {
+                  "id": "bp_chn_101",
+                  "label": "Biomedical Waste Management (BMW 2016/2018 Amendment) 4-Color Coding",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Hospital Segregation Bins & Disposal Methods",
+                    "markdownContent": "### 1. Yellow Bin (Non-Chlorinated Plastic Bag — Incineration / Deep Burial)\n* Human & Animal Anatomical Waste: Placenta, amputated body parts, tissues, organs.\n* Soiled Waste: Dressings, cotton swabs, bandages, plaster casts contaminated with blood or body fluids.\n* Expired or Discarded Medicines & Cytotoxic Drugs (returned to manufacturer or incinerated at >1200°C).\n* Chemical Waste, Chemical Liquid Waste, and Discarded Linen/Mattresses contaminated with blood.\n* Microbiology & Biotechnology Lab Waste: Blood bags, live/attenuated vaccines, culture plates (pre-treat via autoclaving on-site).\n\n### 2. Red Bin (Non-Chlorinated Plastic Bag — Autoclaving -> Shredding -> Recycling)\n* Contaminated Recyclable Plastic & Rubber Waste: IV tubing sets, IV plastic bottles, Foley's urinary catheters, Ryle's tubes, oxygen masks, urine bags, syringes WITHOUT needles, and latex gloves.\n\n### 3. White Container (Translucent, Puncture-Proof, Tamper-Proof Box)\n* Waste Metal Sharps: Hypodermic needles, syringes with fixed needles, scalpels, blades, lumbar puncture needles, suture needles.\n* Disposal: Autoclaving / Dry heat sterilization followed by shredding/mutilation and encapsulation in a sharp pit or iron foundry.\n\n### 4. Blue Container (Puncture-Proof Cardboard Box with Blue Marking)\n* Glassware & Metallic Body Implants: Broken or intact glass ampoules, glass vials, microscope slides, and orthopedic metallic implants/prostheses.",
+                    "clinicalPearl": "Exam Trap: Blood bags (even though made of plastic) ALWAYS go into the YELLOW bin (with pre-treatment/autoclaving) because of high biohazard risk—never into the Red bin! Syringe plastic barrel goes into RED, detached metal needle goes into WHITE.",
+                    "normalValues": [
+                      { "label": "Maximum BMW Storage Time before Treatment", "value": "Within 48 hours" },
+                      { "label": "Sodium Hypochlorite Concentration for Blood Spills", "value": "1% (for <10 mL minor spill) to 10% (for >10 mL major blood spill)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2024_S1_Q11", "AIIMS_NORCET_2023_S1_Q04", "ESIC_2024_Q02"]
+                  }
+                },
+                {
+                  "id": "bp_chn_102",
+                  "label": "National Immunization Schedule (NIS), Cold Chain & Vaccine Vial Monitor (VVM)",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Vaccine Routes, Diluents & Temperature Sensitivity",
+                    "markdownContent": "### 1. High-Yield NIS Vaccine Specs\n* BCG (At Birth up to 1 year): Live attenuated (Danish 1331 strain). Reconstituted strictly with 0.9% Normal Saline (never distilled water, which causes skin necrosis). Dose: 0.05 mL up to 1 month of age; 0.1 mL after 1 month, given Intradermally (ID) over the left upper arm (insertion of deltoid). Leaves a permanent scar in 6–12 weeks.\n* Hepatitis B (Birth Dose within 24 hours): 0.5 mL IM in anterolateral aspect of mid-thigh.\n* Pentavalent (DPT + Hep-B + Hib) at 6, 10, 14 Weeks: 0.5 mL IM in anterolateral mid-thigh.\n* fIPV (Fractional Inactivated Polio Vaccine) at 6, 14 Weeks & 9 Months: 0.1 mL Intradermal (ID) in right upper arm.\n* Measles-Rubella (MR) at 9–12 Months & 16–24 Months: Reconstituted with Sterile Water provided by manufacturer. Dose: 0.5 mL Subcutaneous (SC) in right upper arm. Must use within 4 hours of reconstitution (risk of Toxic Shock Syndrome).\n\n### 2. Cold Chain & Sensitivity Hierarchy\n* Most Heat-Sensitive Vaccine: OPV (Oral Polio Vaccine) -> Measles -> BCG.\n* Most Freeze-Sensitive Vaccines (Never Freeze - 'T-Series'): Hep-B, Pentavalent, DPT, Td, IPV (perform the Shake Test if freezing is suspected).",
+                    "clinicalPearl": "Ice-Lined Refrigerator (ILR) maintains +2°C to +8°C at the PHC level and stores ALL vaccines. Its dial thermometer is checked twice daily. Open Vial Policy (reuse up to 28 days) applies to Liquid Pentavalent, OPV, Hep-B, Td, and IPV, but NEVER applies to reconstituted vaccines (BCG, MR, Rotavirus, JE).",
+                    "normalValues": [
+                      { "label": "ILR (Ice-Lined Refrigerator) Temperature", "value": "+2°C to +8°C" },
+                      { "label": "Deep Freezer Temperature (for Ice Packs/OPV stock)", "value": "-15°C to -25°C" },
+                      { "label": "Vitamin A Prophylaxis Dose (9 months to 5 years)", "value": "1st dose at 9 mos: 1 Lakh IU (1 mL); then 2 Lakh IU (2 mL) every 6 mos (Total 9 doses = 17 Lakh IU)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S2_Q61", "RRB_2019_Q18", "DSSSB_2022_Q45"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_pharm_07",
+      "name": "Allied Sciences & Clinical Pharmacology",
+      "iconName": "Pill",
+      "weightagePercentage": 10,
+      "subtopics": [
+        {
+          "id": "sub_pharm_antidotes_01",
+          "title": "Critical Drug Antidotes, High-Alert Medications & Lab Vacutainers",
+          "importanceTier": "High",
+          "phases": [
+            {
+              "id": "ph_pharm_1_1",
+              "order": 1,
+              "title": "Phase 1: Emergency Toxicology & Lab Protocols",
+              "bulletPoints": [
+                {
+                  "id": "bp_pharm_101",
+                  "label": "Master Clinical Antidote Table & Therapeutic Drug Monitoring (TDM)",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "High-Frequency NORCET Antidote Pairings",
+                    "markdownContent": "### Specific Antidotes for Overdose / Toxicity\n* Paracetamol (Acetaminophen): N-Acetylcysteine (NAC) (replenishes hepatic glutathione to neutralize toxic metabolite NAPQI).\n* Opioids (Morphine, Fentanyl, Heroin): Naloxone (Narcan) (competitive mu-opioid receptor antagonist).\n* Benzodiazepines (Midazolam, Diazepam): Flumazenil.\n* Heparin (Unfractionated): Protamine Sulfate (1 mg neutralizes ~100 IU of Heparin; Monitor aPTT).\n* Warfarin (Coumadin): Vitamin K1 (Phytonadione) + Fresh Frozen Plasma (FFP) in acute bleeding (Monitor PT/INR).\n* Organophosphate Poisoning: Atropine Sulfate (reverses muscarinic symptoms; titrate until drying of bronchial secretions / atropinization) + Pralidoxime (PAM) (reactivates acetylcholinesterase at nicotinic sites).\n* Digoxin Toxicity: Digoxin Immune Fab (Digibind).\n* Iron Overload / Toxicity: Deferoxamine (Desferal) (turns urine vin-rosé pink).\n* Copper Overload (Wilson's Disease): D-Penicillamine.\n* Lead Poisoning: Calcium Disodium EDTA / Dimercaprol (BAL) / Succimer.\n* Methanol / Ethylene Glycol Poisoning: Fomepizole (or Ethanol).\n* Cyanide Poisoning: Hydroxocobalamin (or Amyl Nitrite + Sodium Nitrite + Sodium Thiosulfate).\n* Isoniazid (INH) Neurotoxicity: Pyridoxine (Vitamin B6).",
+                    "clinicalPearl": "Warfarin therapeutic INR target is 2.0 to 3.0 for DVT/PE/Atrial Fibrillation, and 2.5 to 3.5 for Mechanical Prosthetic Heart Valves. Unfractionated Heparin therapeutic aPTT target is 1.5 to 2.5 times the control value.",
+                    "normalValues": [
+                      { "label": "Normal PT (Prothrombin Time)", "value": "11 – 12.5 seconds (Normal INR: 0.8 – 1.1)" },
+                      { "label": "Normal aPTT", "value": "30 – 40 seconds (Therapeutic on Heparin: 60–80 sec)" },
+                      { "label": "Therapeutic Phenytoin Level", "value": "10 – 20 mcg/mL" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2024_S1_Q38", "AIIMS_NORCET_2022_S2_Q55", "ESIC_2024_Q74"]
+                  }
+                },
+                {
+                  "id": "bp_pharm_102",
+                  "label": "Phlebotomy Order of Draw & Vacutainer Tube Color Additives",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "CLSI Standard Order of Draw to Prevent Cross-Contamination",
+                    "markdownContent": "### Strict Sequence of Blood Collection (Mnemonic: Boys Light Red Gowns Every Grey Day)\n1. Blood Culture Bottles (Yellow/Sterile Broth): Drawn FIRST to maintain strict surgical asepsis.\n2. Light Blue Top (3.2% Sodium Citrate): Used for PT/INR, aPTT, D-Dimer, Fibrinogen. Must be filled to the exact 9:1 blood-to-anticoagulant mark.\n3. Red Top / Gold SST (Clot Activator / Gel): Used for Serum Chemistry, Serology, Blood Bank Cross-matching.\n4. Green Top (Lithium or Sodium Heparin): Used for Plasma Chemistry, Ammonia, Troponin, ABG.\n5. Lavender / Purple Top (K2 or K3 EDTA): Used for CBC (Complete Blood Count), HbA1c, ESR (Westergren), Peripheral Smear, Cross-match.\n6. Grey Top (Sodium Fluoride + Potassium Oxalate): Used for Fasting/Random Blood Glucose and Serum Lactate (Sodium fluoride inhibits glycolysis enzyme enolase, preserving glucose levels for up to 24–48 hours).",
+                    "clinicalPearl": "Never draw a Light Blue (Citrate) or Red/Green (Chemistry) tube AFTER a Lavender (EDTA) tube! Potassium-EDTA carryover onto the needle will falsely elevate serum Potassium (pseudohyperkalemia) and chelate Calcium (falsely severe hypocalcemia and prolonged PT/aPTT).",
+                    "normalValues": [
+                      { "label": "Blood Culture Skin Antiseptic of Choice", "value": "2% Chlorhexidine in 70% Isopropyl Alcohol (allow 30 sec dry time)" },
+                      { "label": "Black Top Vacutainer (3.8% Sodium Citrate 4:1)", "value": "Exclusively for Westergren ESR" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S1_Q71", "JIPMER_2022_Q58"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "subj_apt_08",
+      "name": "General Aptitude, Reasoning & Healthcare GK",
+      "iconName": "Calculator",
+      "weightagePercentage": 8,
+      "subtopics": [
+        {
+          "id": "sub_apt_math_01",
+          "title": "Quantitative Aptitude, Clinical Ratios & Public Health Committees",
+          "importanceTier": "Moderate",
+          "phases": [
+            {
+              "id": "ph_apt_1_1",
+              "order": 1,
+              "title": "Phase 1: High-Frequency Exam Formulas & Static Facts",
+              "bulletPoints": [
+                {
+                  "id": "bp_apt_101",
+                  "label": "Solution Dilution Formulas, Work-Time Shortcuts & Nurse-Patient Ratios",
+                  "isHighYield": true,
+                  "context": {
+                    "heading": "Rapid Quantitative Formulas & INC Staffing Norms",
+                    "markdownContent": "### 1. Solution Dilution Equation (Used in Sodium Hypochlorite / Savlon Preparation)\n* Equation: C1 × V1 = C2 × V2\n* Formula for parts of water to add to stock solution: Parts of Water = (% Concentration of Stock Solution / % Concentration of Desired Solution) - 1\n* Example: To prepare 1% Sodium Hypochlorite from a 5% stock bleach solution: (5 / 1) - 1 = 4 parts water + 1 part stock bleach.\n\n### 2. INC / SIU Nurse-to-Patient Staffing Ratios\n* Intensive Care Unit (ICU / CCU / NICU): 1 : 1 (per shift) or 1 : 2 for step-down HDU.\n* General Medical-Surgical Ward: 1 : 6 (SIU norm) or 1 : 3 in teaching hospitals.\n* Pediatric / Burns / Neuro / Orthopaedic Ward: 1 : 4.\n* Labor Room: 1 : 1 per labor table.",
+                    "clinicalPearl": "In the 20-question Non-Nursing section of NORCET Stage-I, always attempt Blood Relations, Coding-Decoding, Number Series, and Solution/Percentage math first, as these carry 100% deterministic accuracy against the -1/3 negative marking penalty.",
+                    "normalValues": [
+                      { "label": "Sub-Centre Population Norm (Plain / Hilly)", "value": "5,000 (Plain) / 3,000 (Hilly & Tribal)" },
+                      { "label": "Primary Health Centre (PHC) Norm (Plain / Hilly)", "value": "30,000 (Plain) / 20,000 (Hilly & Tribal)" },
+                      { "label": "Community Health Centre (CHC) Norm (Plain / Hilly)", "value": "1,20,000 (Plain) / 80,000 (Hilly & Tribal)" }
+                    ],
+                    "linkedPyqIds": ["AIIMS_NORCET_2023_S1_Q92", "DSSSB_2022_Q05"]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
