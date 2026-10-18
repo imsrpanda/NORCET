@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SubjectHeader } from './SubjectHeader';
 import { SubtopicSection } from './SubtopicSection';
 import { ContextDrawer } from './ContextDrawer';
@@ -12,14 +12,13 @@ export const LearningDeskView: React.FC = () => {
   const currentSubject = syllabus.find((s) => s.id === selectedSubjectId) || syllabus[0];
   const subtopics = currentSubject.subtopics;
 
-  // Track expanded state for each subtopic (all expanded by default for full visibility)
-  const [expandedSubtopicIds, setExpandedSubtopicIds] = useState<Record<string, boolean>>(() => {
-    const initial: Record<string, boolean> = {};
-    subtopics.forEach((st) => {
-      initial[st.id] = true;
-    });
-    return initial;
-  });
+  // Track expanded state for each subtopic (collapsed by default)
+  const [expandedSubtopicIds, setExpandedSubtopicIds] = useState<Record<string, boolean>>({});
+
+  // Reset all subtopics to collapsed whenever a subject is clicked / selected
+  useEffect(() => {
+    setExpandedSubtopicIds({});
+  }, [selectedSubjectId]);
 
   const toggleSubtopic = (subtopicId: string) => {
     triggerHaptic('light');
@@ -29,7 +28,7 @@ export const LearningDeskView: React.FC = () => {
     }));
   };
 
-  const allAreExpanded = subtopics.every((st) => expandedSubtopicIds[st.id]);
+  const allAreExpanded = subtopics.length > 0 && subtopics.every((st) => !!expandedSubtopicIds[st.id]);
 
   const handleToggleExpandAll = () => {
     triggerHaptic('light');

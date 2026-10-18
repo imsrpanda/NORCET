@@ -99,10 +99,18 @@ export const ClinicalMarkdown: React.FC<ClinicalMarkdownProps> = ({ content }) =
         </h3>
       );
     } else if (trimmed.startsWith('- ') || trimmed.startsWith('• ') || trimmed.startsWith('* ')) {
+      const isIndented = line.startsWith('  ') || line.startsWith('\t');
       const itemText = trimmed.replace(/^[-•*]\s*/, '');
       elements.push(
-        <div key={index} className="flex items-start gap-2 text-xs md:text-sm text-slate-700 dark:text-slate-300 my-1 leading-relaxed">
-          <span className="text-teal-600 dark:text-teal-400 font-bold select-none mt-0.5">•</span>
+        <div 
+          key={index} 
+          className={`flex items-start gap-2 text-xs md:text-sm my-1 leading-relaxed ${
+            isIndented ? 'ml-5 text-slate-600 dark:text-slate-300' : 'text-slate-700 dark:text-slate-300'
+          }`}
+        >
+          <span className={`${isIndented ? 'text-slate-400 dark:text-slate-500 text-[10px]' : 'text-teal-600 dark:text-teal-400 font-bold'} select-none mt-0.5`}>
+            {isIndented ? '◦' : '•'}
+          </span>
           <div className="flex-1">{renderInlineFormatting(itemText)}</div>
         </div>
       );
@@ -193,11 +201,24 @@ function renderMathFormula(raw: string): React.ReactNode {
   );
 }
 
-// Helper to format bold, code, math symbols, and color badges
+// Helper to format bold, italic, code, math symbols, and color badges
 function renderInlineFormatting(text: string): React.ReactNode {
   // First clean any inline LaTeX text commands and unescaped artifacts
   const preCleaned = text
     .replace(/\x0C/g, '') // remove form feed
+    .replace(/\$\\\\?rightarrow\$/g, '→')
+    .replace(/\\\\?rightarrow/g, '→')
+    .replace(/\\to\b/g, '→')
+    .replace(/\$(\d+)\^\\?circ\$/g, '$1°')
+    .replace(/(\d+)\^\\?circ/g, '$1°')
+    .replace(/\$\^\\?circ\$/g, '°')
+    .replace(/\$\\\\?le\s*([^$]+)\$/g, '≤ $1')
+    .replace(/\$\\\\?ge\s*([^$]+)\$/g, '≥ $1')
+    .replace(/\\\\?le\b/g, '≤')
+    .replace(/\\\\?ge\b/g, '≥')
+    .replace(/\$pm\$/g, '±')
+    .replace(/\\\\?pm\b/g, '±')
+    .replace(/\\\\?mu\s*L\b/g, 'µL')
     .replace(/\\?text\{([^}]+)\}/g, '$1')
     .replace(/(^|[^a-zA-Z])ext\{([^}]+)\}/g, '$1$2')
     .replace(/\\?times/g, '×')
@@ -206,21 +227,46 @@ function renderInlineFormatting(text: string): React.ReactNode {
     .replace(/\\geq?/g, '≥')
     .replace(/\\leq?/g, '≤')
     .replace(/\\approx/g, '≈')
-    .replace(/\\to\b/g, '→')
     .replace(/\$\^\{\\circ\}\\text\{C\}\$/g, '°C')
     .replace(/\$\\ge\s?(\d+)\^\{\\circ\}\\text\{C\}\$/g, '≥ $1°C');
 
-  // Replace clean text tokens
-  const parts = preCleaned.split(/(\*\*.*?\*\*|`.*?`|\$\$.*?\$\$|\$.*?\$)/g);
+  // Tokenize bold-italic (***), bold (**), italic (*), italic (_), code (`), display math ($$), inline math ($)
+  const parts = preCleaned.split(/(\*\*\*.*?\*\*\*|\*\*.*?\*\*|\*[^*\n]+?\*|___.*?___|__.*?__|_[^_\n]+?_|`.*?`|\$\$.*?\$\$|\$.*?\$)/g);
 
   return parts.map((part, i) => {
-    if (part.startsWith('**') && part.endsWith('**')) {
+    // Bold + Italic (***text***)
+    if (part.startsWith('***') && part.endsWith('***') && part.length > 6) {
       return (
-        <strong key={i} className="font-semibold text-slate-900 dark:text-white">
-          {part.slice(2, -2)}
+        <strong key={i} className="font-bold italic text-slate-900 dark:text-white">
+          {renderInlineFormatting(part.slice(3, -3))}
         </strong>
       );
     }
+    // Bold (**text**)
+    if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+      return (
+        <strong key={i} className="font-semibold text-slate-900 dark:text-white">
+          {renderInlineFormatting(part.slice(2, -2))}
+        </strong>
+      );
+    }
+    // Italic (*text*)
+    if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+      return (
+        <em key={i} className="italic font-medium text-slate-800 dark:text-slate-200">
+          {renderInlineFormatting(part.slice(1, -1))}
+        </em>
+      );
+    }
+    // Italic (_text_)
+    if (part.startsWith('_') && part.endsWith('_') && part.length > 2) {
+      return (
+        <em key={i} className="italic font-medium text-slate-800 dark:text-slate-200">
+          {renderInlineFormatting(part.slice(1, -1))}
+        </em>
+      );
+    }
+    // Inline code (`code`)
     if (part.startsWith('`') && part.endsWith('`')) {
       return (
         <code key={i} className="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-teal-700 dark:text-teal-300 font-mono text-[11px]">
@@ -228,17 +274,19 @@ function renderInlineFormatting(text: string): React.ReactNode {
         </code>
       );
     }
+    // Block math ($$...$$)
     if (part.startsWith('$$') && part.endsWith('$$')) {
       return <React.Fragment key={i}>{renderMathFormula(part.slice(2, -2))}</React.Fragment>;
     }
+    // Inline math ($...$)
     if (part.startsWith('$') && part.endsWith('$')) {
-      // Inline math cleanup
       const cleanInline = part.slice(1, -1)
         .replace(/\\text\{([^}]+)\}/g, '$1')
         .replace(/\\geq?/g, '≥')
         .replace(/\\leq?/g, '≤')
         .replace(/\\times/g, '×')
-        .replace(/\\to\b/g, '→');
+        .replace(/\\to\b/g, '→')
+        .replace(/\\rightarrow/g, '→');
       return (
         <span key={i} className="font-mono text-teal-700 dark:text-teal-300 font-medium">
           {cleanInline}

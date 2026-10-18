@@ -14,7 +14,7 @@ export const App: React.FC = () => {
   const { activeTab } = useAppStore();
   const [newVersion, setNewVersion] = useState<string | null>(null);
 
-  // Daily version check: Runs only once per 24 hours
+  // Daily version check: Runs once per day or shows pending update
   useEffect(() => {
     checkForAppUpdate().then((latest) => {
       if (latest) {

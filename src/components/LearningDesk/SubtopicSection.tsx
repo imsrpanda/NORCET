@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ChevronDown, 
   ChevronUp, 
@@ -25,14 +25,13 @@ export const SubtopicSection: React.FC<SubtopicSectionProps> = ({
 }) => {
   const { userProgress } = useAppStore();
 
-  // Track expanded phases within this subtopic (all expanded by default for full visibility)
-  const [expandedPhaseIds, setExpandedPhaseIds] = useState<Record<string, boolean>>(() => {
-    const initial: Record<string, boolean> = {};
-    subtopic.phases.forEach((p) => {
-      initial[p.id] = true;
-    });
-    return initial;
-  });
+  // Track expanded phases within this subtopic (collapsed by default)
+  const [expandedPhaseIds, setExpandedPhaseIds] = useState<Record<string, boolean>>({});
+
+  // Reset phases to collapsed whenever the subtopic changes
+  useEffect(() => {
+    setExpandedPhaseIds({});
+  }, [subtopic.id]);
 
   // Calculate subtopic stats
   let totalBullets = 0;

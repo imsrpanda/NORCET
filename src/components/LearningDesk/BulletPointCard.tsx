@@ -1,7 +1,8 @@
 import React from 'react';
-import { Check, Flame, Bookmark, ArrowRight, HelpCircle } from 'lucide-react';
+import { Check, Flame, Bookmark, ArrowRight, HelpCircle, GitBranch } from 'lucide-react';
 import { BulletPointItem } from '../../types';
 import { useAppStore, appStore } from '../../store/useAppStore';
+import { getOrGenerateDiagram } from '../../data/clinicalDiagrams';
 
 interface BulletPointCardProps {
   bullet: BulletPointItem;
@@ -28,6 +29,7 @@ export const BulletPointCard: React.FC<BulletPointCardProps> = ({ bullet }) => {
   };
 
   const pyqCount = bullet.context.linkedPyqIds.length;
+  const diagram = getOrGenerateDiagram(bullet);
 
   return (
     <div
@@ -81,6 +83,11 @@ export const BulletPointCard: React.FC<BulletPointCardProps> = ({ bullet }) => {
               <span>{pyqCount} {pyqCount === 1 ? 'PYQ' : 'PYQs'}</span>
             </span>
           )}
+
+          <span className="flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200/80 dark:border-teal-900/60">
+            <GitBranch className="w-3 h-3 text-teal-600 dark:text-teal-400" />
+            <span>{diagram.tag}</span>
+          </span>
 
           {bullet.context.clinicalAlert && (
             <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400 border border-amber-200/80 dark:border-amber-900/60">

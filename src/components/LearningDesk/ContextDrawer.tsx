@@ -12,6 +12,8 @@ import {
 } from 'lucide-react';
 import { useAppStore, appStore } from '../../store/useAppStore';
 import { ClinicalMarkdown } from '../Common/ClinicalMarkdown';
+import { ClinicalVisualGraphic } from '../Common/ClinicalVisualGraphic';
+import { getOrGenerateDiagram } from '../../data/clinicalDiagrams';
 import { SEED_PYQ_QUESTIONS } from '../../data/pyqQuestions';
 import { PracticeCard } from '../PYQArena/PracticeCard';
 import { triggerHaptic } from '../../utils/haptics';
@@ -63,6 +65,9 @@ export const ContextDrawer: React.FC = () => {
   const linkedQuestions = SEED_PYQ_QUESTIONS.filter((q) =>
     activeContextBullet.context.linkedPyqIds.includes(q.id)
   );
+
+  // Generate or fetch curated visual diagram / flowchart
+  const diagram = getOrGenerateDiagram(activeContextBullet);
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col justify-end md:justify-center p-0 md:p-6">
@@ -128,6 +133,9 @@ export const ContextDrawer: React.FC = () => {
 
         {/* Scrollable Content Area */}
         <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+          {/* Visual Clinical Diagram & Flowchart Hero */}
+          <ClinicalVisualGraphic diagram={diagram} />
+
           {/* Main Clinical Markdown Content */}
           <ClinicalMarkdown content={activeContextBullet.context.markdownContent} />
 
