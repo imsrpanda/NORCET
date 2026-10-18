@@ -65,15 +65,15 @@ export const ContextDrawer: React.FC = () => {
   );
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col justify-end">
+    <div className="fixed inset-0 z-50 flex flex-col justify-end md:justify-center p-0 md:p-6">
       {/* Backdrop */}
       <div
         onClick={handleClose}
         className="fixed inset-0 bg-slate-950/70 backdrop-blur-xs transition-opacity animate-fadeIn"
       />
 
-      {/* Drawer Container (75% - 85% Viewport Height) */}
-      <div className="relative z-10 w-full max-w-2xl mx-auto h-[85vh] max-h-[92vh] bg-white dark:bg-slate-950 rounded-t-3xl border-t border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col overflow-hidden animate-slideUp">
+      {/* Drawer Container: Bottom Sheet on Mobile, Centered Clinical Reader on Desktop */}
+      <div className="relative z-10 w-full max-w-2xl md:max-w-4xl mx-auto h-[88vh] md:h-[84vh] max-h-[92vh] bg-white dark:bg-slate-950 rounded-t-3xl md:rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl flex flex-col overflow-hidden animate-slideUp">
         {/* Drag Handle Bar */}
         <div className="w-full pt-3 pb-2 flex flex-col items-center justify-center cursor-pointer select-none bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-900">
           <div className="w-12 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700" />

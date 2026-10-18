@@ -15,8 +15,8 @@ export const App: React.FC = () => {
       {/* Top Mobile/Desktop Status & Navigation Bar */}
       <Navbar />
 
-      {/* Main Container constrained for clinical mobile-first ergonomics */}
-      <main className="flex-1 w-full max-w-2xl mx-auto px-4 pt-4 sm:pt-6">
+      {/* Main Container: Mobile-first ergonomic padding scaling to full desktop */}
+      <main className="flex-1 w-full max-w-6xl mx-auto px-3.5 sm:px-6 lg:px-8 pt-3 sm:pt-6">
         {activeTab === 'dashboard' && <DashboardView />}
         {activeTab === 'learning-desk' && <LearningDeskView />}
         {activeTab === 'pyq-arena' && <PYQArenaView />}

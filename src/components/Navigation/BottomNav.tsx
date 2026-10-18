@@ -23,8 +23,8 @@ export const BottomNav: React.FC = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-lg border-t border-slate-200/80 dark:border-slate-800/80 pb-safe">
-      <div className="max-w-2xl mx-auto h-16 flex items-center justify-around px-2">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-slate-950/95 backdrop-blur-lg border-t border-slate-200/80 dark:border-slate-800/80 pb-safe shadow-lg">
+      <div className="max-w-lg mx-auto h-16 flex items-center justify-around px-2">
         {tabs.map((tab) => {
           const isActive = activeTab === tab.id;
           const IconComponent = tab.icon;

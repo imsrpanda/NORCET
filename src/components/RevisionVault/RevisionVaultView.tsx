@@ -157,9 +157,9 @@ export const RevisionVaultView: React.FC = () => {
 
       {/* SubTab 1: Rapid Clinical Cheat Sheets */}
       {subTab === 'sheets' && (
-        <div className="space-y-3">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {filteredSheets.length === 0 ? (
-            <div className="text-center py-8 text-xs text-slate-400">
+            <div className="col-span-full text-center py-8 text-xs text-slate-400">
               No clinical cheat sheets match "{searchQuery}"
             </div>
           ) : (
@@ -172,7 +172,7 @@ export const RevisionVaultView: React.FC = () => {
 
       {/* SubTab 2: Bookmarked Concepts */}
       {subTab === 'bookmarks' && (
-        <div className="space-y-2.5">
+        <div>
           {bookmarkedBullets.length === 0 ? (
             <div className="p-8 text-center bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 space-y-2">
               <Bookmark className="w-8 h-8 text-slate-300 dark:text-slate-600 mx-auto" />
@@ -184,37 +184,39 @@ export const RevisionVaultView: React.FC = () => {
               </p>
             </div>
           ) : (
-            bookmarkedBullets.map((item) => (
-              <div
-                key={item.bullet.id}
-                onClick={() => handleOpenBullet(item)}
-                className="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/50 transition-all cursor-pointer shadow-xs flex items-center justify-between gap-3 group"
-              >
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-1.5 text-[10px] font-bold text-amber-600 dark:text-amber-400 uppercase">
-                    <Bookmark className="w-3 h-3 fill-amber-500" />
-                    <span>{item.subjectName}</span>
-                    <span>•</span>
-                    <span className="text-slate-400">{item.phaseTitle}</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {bookmarkedBullets.map((item) => (
+                <div
+                  key={item.bullet.id}
+                  onClick={() => handleOpenBullet(item)}
+                  className="p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-amber-500/50 transition-all cursor-pointer shadow-xs flex items-center justify-between gap-3 group"
+                >
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5 text-[10px] font-bold text-amber-600 dark:text-amber-400 uppercase">
+                      <Bookmark className="w-3 h-3 fill-amber-500" />
+                      <span>{item.subjectName}</span>
+                      <span>•</span>
+                      <span className="text-slate-400">{item.phaseTitle}</span>
+                    </div>
+                    <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate mt-1 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                      {item.bullet.label}
+                    </h4>
                   </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate mt-1 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
-                    {item.bullet.label}
-                  </h4>
-                </div>
 
-                <div className="flex items-center gap-1 text-xs font-semibold text-teal-600 dark:text-teal-400 group-hover:translate-x-1 transition-transform flex-shrink-0">
-                  <span>Read</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-1 text-xs font-semibold text-teal-600 dark:text-teal-400 group-hover:translate-x-1 transition-transform flex-shrink-0">
+                    <span>Read</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
                 </div>
-              </div>
-            ))
+              ))}
+            </div>
           )}
         </div>
       )}
 
       {/* SubTab 3: High Yield Flagged Gems */}
       {subTab === 'high-yield' && (
-        <div className="space-y-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {highYieldBullets.map((item) => (
             <div
               key={item.bullet.id}
