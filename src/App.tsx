@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Navbar } from './components/Navigation/Navbar';
 import { BottomNav } from './components/Navigation/BottomNav';
+import { AppFooter } from './components/Navigation/AppFooter';
+import { UpdateModal } from './components/Common/UpdateModal';
 import { DashboardView } from './components/Dashboard/DashboardView';
 import { LearningDeskView } from './components/LearningDesk/LearningDeskView';
 import { PYQArenaView } from './components/PYQArena/PYQArenaView';
 import { RevisionVaultView } from './components/RevisionVault/RevisionVaultView';
 import { useAppStore } from './store/useAppStore';
+import { checkForAppUpdate } from './services/versionChecker';
+import { UpdateInfo } from './config/appVersion';
 
 export const App: React.FC = () => {
   const { activeTab } = useAppStore();
+  const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
+
+  // Daily version check: Runs only once per 24 hours
+  useEffect(() => {
+    checkForAppUpdate().then((result) => {
+      if (result.hasUpdate && result.updateInfo) {
+        setUpdateInfo(result.updateInfo);
+      }
+    });
+  }, []);
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 flex flex-col font-sans transition-colors duration-200">
@@ -21,10 +35,21 @@ export const App: React.FC = () => {
         {activeTab === 'learning-desk' && <LearningDeskView />}
         {activeTab === 'pyq-arena' && <PYQArenaView />}
         {activeTab === 'revision-vault' && <RevisionVaultView />}
+
+        {/* Global Footer with App Version & Manual Check */}
+        <AppFooter onUpdateFound={setUpdateInfo} />
       </main>
 
       {/* Persistent 4-Tab Bottom Navigation Bar */}
       <BottomNav />
+
+      {/* Pop-up Update Modal when newer version is detected */}
+      {updateInfo && (
+        <UpdateModal 
+          updateInfo={updateInfo} 
+          onClose={() => setUpdateInfo(null)} 
+        />
+      )}
     </div>
   );
 };
