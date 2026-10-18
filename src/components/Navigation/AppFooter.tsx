@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { RefreshCw, CheckCircle, ShieldCheck } from 'lucide-react';
-import { APP_VERSION, APP_RELEASE_DATE } from '../../config/appVersion';
+import { APP_VERSION } from '../../config/appVersion';
 import { checkForAppUpdate } from '../../services/versionChecker';
-import { UpdateInfo } from '../../config/appVersion';
 import { triggerHaptic } from '../../utils/haptics';
 
 interface AppFooterProps {
-  onUpdateFound?: (info: UpdateInfo) => void;
+  onUpdateFound?: (newVersion: string) => void;
 }
 
 export const AppFooter: React.FC<AppFooterProps> = ({ onUpdateFound }) => {
@@ -19,12 +18,12 @@ export const AppFooter: React.FC<AppFooterProps> = ({ onUpdateFound }) => {
     setCheckStatus(null);
 
     try {
-      const res = await checkForAppUpdate(true); // force check bypassing 24h throttle
+      const newVersion = await checkForAppUpdate(true); // force check bypassing 24h throttle
       setIsChecking(false);
 
-      if (res.hasUpdate && res.updateInfo) {
-        setCheckStatus(`Update available: v${res.updateInfo.latestVersion}`);
-        onUpdateFound?.(res.updateInfo);
+      if (newVersion) {
+        setCheckStatus(`Update available: v${newVersion}`);
+        onUpdateFound?.(newVersion);
       } else {
         setCheckStatus(`Latest version installed (v${APP_VERSION})`);
         setTimeout(() => setCheckStatus(null), 4000);
@@ -48,8 +47,6 @@ export const AppFooter: React.FC<AppFooterProps> = ({ onUpdateFound }) => {
       </div>
 
       <div className="flex items-center justify-center gap-3 text-[11px] text-slate-400">
-        <span>Build Date: {APP_RELEASE_DATE}</span>
-        <span>•</span>
         <button
           onClick={handleManualCheck}
           disabled={isChecking}

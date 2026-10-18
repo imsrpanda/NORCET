@@ -9,17 +9,16 @@ import { PYQArenaView } from './components/PYQArena/PYQArenaView';
 import { RevisionVaultView } from './components/RevisionVault/RevisionVaultView';
 import { useAppStore } from './store/useAppStore';
 import { checkForAppUpdate } from './services/versionChecker';
-import { UpdateInfo } from './config/appVersion';
 
 export const App: React.FC = () => {
   const { activeTab } = useAppStore();
-  const [updateInfo, setUpdateInfo] = useState<UpdateInfo | null>(null);
+  const [newVersion, setNewVersion] = useState<string | null>(null);
 
   // Daily version check: Runs only once per 24 hours
   useEffect(() => {
-    checkForAppUpdate().then((result) => {
-      if (result.hasUpdate && result.updateInfo) {
-        setUpdateInfo(result.updateInfo);
+    checkForAppUpdate().then((latest) => {
+      if (latest) {
+        setNewVersion(latest);
       }
     });
   }, []);
@@ -37,17 +36,17 @@ export const App: React.FC = () => {
         {activeTab === 'revision-vault' && <RevisionVaultView />}
 
         {/* Global Footer with App Version & Manual Check */}
-        <AppFooter onUpdateFound={setUpdateInfo} />
+        <AppFooter onUpdateFound={setNewVersion} />
       </main>
 
       {/* Persistent 4-Tab Bottom Navigation Bar */}
       <BottomNav />
 
       {/* Pop-up Update Modal when newer version is detected */}
-      {updateInfo && (
+      {newVersion && (
         <UpdateModal 
-          updateInfo={updateInfo} 
-          onClose={() => setUpdateInfo(null)} 
+          newVersion={newVersion} 
+          onClose={() => setNewVersion(null)} 
         />
       )}
     </div>
